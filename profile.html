@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+
+		<link rel="stylesheet" href="./css/profile.css">
+	</head>
+	<body>
+		<div class="base">
+			<audio id="myAudio" autoplay loop>
+				<source type="audio/mpeg" src="./img/music1.mp3">
+			</audio>
+
+			<button id="toggleButton">
+				<img id="buttonImage" src="./img/2.png" alt="播放">
+			</button>
+			<script>
+				const audio = document.getElementById('myAudio');
+				const button = document.getElementById('toggleButton');
+
+				button.onclick = function() {
+					if (audio.paused) {
+						audio.play();
+						buttonImage.src = './img/2.png';
+					} else {
+						audio.pause();
+						buttonImage.src = './img/1.png';
+					}
+				};
+			</script><!-- 插入背景音乐 -->
+
+			<div class="profile">
+				<div class="photo">
+					<img class="myPhoto" src="./img/jobe.png">
+				</div>
+				<div class="info">
+					<h4 class="name">Jobe Chen</h4><small id="job">Future Basketball Star</small>
+				</div>
+			</div>
+			<div class="about">
+				<h3>写在前面</h3>作品以娱乐为主，无任何人身攻击的意图，侵权立删<br />
+			</div>
+			<div class="contact">
+				<h3>Contact</h3>
+				<table>
+					<tr>
+						<td><span>Telephone</span></td>
+					</tr>
+					<tr>
+						<td><a href="http://www.jjjy.net/" target="_blank"><span>135****5790</span></a></td>
+					</tr>
+					<tr>
+						<td><span>Address</span></td>
+					</tr>
+					<tr>
+						<td><a href="https://baike.baidu.com/item/%E6%B3%89%E5%B7%9E%E5%B8%82/607673?fr=ge_ala"
+								target="_blank"><span>Quanzhou, Fujian</span></a></td>
+					</tr>
+					<tr>
+						<td><span>Email me</span></td>
+					</tr>
+					<tr>
+						<td><a href="https://baike.baidu.com/item/%E5%AD%A3%E5%BB%B6%E5%88%9D%E7%BA%A7%E4%B8%AD%E5%AD%A6/7494349?fr=ge_ala"
+								target="_blank"><span>38*****23@qq.com</span></a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!-- 制作表格 -->
+		</div>
+
+
+
+		<div class="func">
+			<div class="overlay"></div>
+			<div class="func-content">
+				<div class="work">
+					<h3><i class="briefcase"></i>Work Exrerience</h3>
+					<ul>
+						<li><span>季延杯的主力足球运动员</span><small>Sept 2020 - Now</small></li>
+						<li><span>高中数学竞赛的顶梁柱</span><small>Oct 2017 - Sept 2022</small></li>
+						<li><span>[This is joker]的stand user</span><small>Oct 2004 - Now</small></li>
+					</ul>
+				</div>
+				<div class="edu">
+					<h3><i class="graduation-cap"></i>Education</h3>
+					<ul>
+						<li><span>在铭鑫幼儿园评选“好宝宝”</span><small>Set 2010 - Nov 2010</small></li>
+						<li><span>在文哲小学担当篮球主力，并打出街道第一的成绩</span><small>Set 2016 - Jun 2017</small></li>
+						<li><span>作为十三班的核心joker，起到不输班长的中流砥柱的作用</span><small>Sept 2018 - Jun 2020</small></li>
+						<li><span>在高中阶段，数学上完虐班级众人，被视为“蹲坑的思考者”</span><small>Sept 2020 - Jun 2023</small></li>
+
+					</ul>
+				</div>
+				<div class="skills-prog">
+					<h3><i class="code"></i>Superpowers</h3>
+					<ul>
+						<li data-percent="90"><span>力量 A</span>
+							<div class="skills-bar">
+								<div class="bar"></div>
+							</div>
+						</li>
+						<li data-percent="86"><span>速度 A</span>
+							<div class="skills-bar">
+								<div class="bar"></div>
+							</div>
+						</li>
+						<li data-percent="97"><span>成长性 A</span>
+							<div class="skills-bar">
+								<div class="bar"></div>
+							</div>
+						</li>
+						<li data-percent="62"><span>灵敏度 C</span>
+							<div class="skills-bar">
+								<div class="bar"></div>
+							</div>
+						</li>
+						<li data-percent="29"><span>射程 E</span>
+							<div class="skills-bar">
+								<div class="bar"></div>
+							</div>
+						</li>
+						<li data-percent="75"><span>持续性 B</span>
+							<div class="skills-bar">
+								<div class="bar"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<script>
+					document.addEventListener("DOMContentLoaded", function() {
+						const skills = document.querySelectorAll('.skills-prog li');
+
+						skills.forEach(skill => {
+							const percent = skill.getAttribute('data-percent');
+							const bar = skill.querySelector('.bar');
+
+							// 设置延迟以便于动画的渐变
+							setTimeout(() => {
+								bar.style.width = `${percent}%`;
+							}, 100); // 100毫秒延迟
+						});
+					});
+				</script>
+				<div class="skills-soft">
+					<h3><i class="list"></i>Personal Skills</h3>
+					<div class="photo">
+						<ul>
+							<li>
+								<div class="image-container">
+									<img class="myphoto" src="./img/3.png" alt="唱">
+									<span class="text">唱</span>
+								</div>
+							</li>
+							<li>
+								<div class="image-container">
+									<img class="myphoto" src="./img/4.png" alt="跳">
+									<span class="text">跳</span>
+								</div>
+							</li>
+							<li>
+								<div class="image-container">
+									<img class="myphoto" src="./img/5.png" alt="rap">
+									<span class="text">rap</span>
+								</div>
+							</li>
+							<li>
+								<div class="image-container">
+									<img class="myphoto" src="./img/6.png" alt="篮球">
+									<span class="text">篮球</span>
+								</div>
+							</li>
+							<li>
+								<div class="image-container">
+									<img class="myphoto" src="./img/7.png" alt="music">
+									<span class="text">music</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
